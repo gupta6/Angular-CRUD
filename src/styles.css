@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body{
+    min-height: 100%;
+  }
+
+  .content{
+    display: block;
+    min-height: 100%;
+  }
+
+  .mt-30{
+    margin-top: 30px;
+  }
+
+  .main-div{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}

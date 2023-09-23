@@ -1,0 +1,88 @@
+<form [formGroup]="employeeForm" (ngSubmit)="submit(employeeForm.value)">
+  <div class="mb-3">
+    <label for="firstname" class="form-label">Firstname</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstname"
+      formControlName="firstname"
+      [ngClass]="{'is-invalid': !getControl('firstname')?.valid && getControl('firstname')?.touched }"
+    />
+    <div *ngIf="getControl('firstname')?.errors && getControl('firstname')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('firstname')?.errors?.['required']">Firstname is required</div>
+      <div *ngIf="getControl('firstname')?.errors?.['minlength']">Minimum length is 3</div>
+      <div *ngIf="getControl('firstname')?.errors?.['noSpaceAllowed']">Whitespace is not allowed</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="lastname" class="form-label">Lastname</label>
+    <input
+      type="text"
+      class="form-control"
+      id="lastname"
+      formControlName="lastname"
+      [ngClass]="{'is-invalid': !getControl('lastname')?.valid && getControl('lastname')?.touched }"
+    />
+    <div *ngIf="getControl('lastname')?.errors && getControl('lastname')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('lastname')?.errors?.['required']">Lastname is required</div>
+      <div *ngIf="getControl('lastname')?.errors?.['minlength']">Minimum length is 3</div>
+      <div *ngIf="getControl('lastname')?.errors?.['noSpaceAllowed']">Whitespace is not allowed</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      formControlName="email"
+      aria-describedby="emailHelp"
+      [ngClass]="{'is-invalid': !getControl('email')?.valid && getControl('email')?.touched }"
+    />
+    <div *ngIf="getControl('email')?.errors && getControl('email')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('email')?.errors?.['required']">Email is required</div>
+      <div *ngIf="getControl('email')?.errors?.['email']">Email is not valid</div>
+      <div *ngIf="getControl('email')?.errors?.['noSpaceAllowed']">Whitespace is not allowed</div>
+    </div>
+    <div id="emailHelp" class="form-text">
+      We'll never share your email with anyone else.
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="phone" class="form-label">Mobile</label>
+    <input
+      type="tel"
+      class="form-control"
+      id="phone"
+      formControlName="phone"
+      placeholder="+91-9999999999"
+      [ngClass]="{'is-invalid': !getControl('phone')?.valid && getControl('phone')?.touched }"
+    />
+    <div *ngIf="getControl('phone')?.errors && getControl('phone')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('phone')?.errors?.['required']">Phone is required</div>
+      <div *ngIf="getControl('phone')?.errors?.['pattern']">Please enter valid 10 digit number.</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="dob" class="form-label">Date of birth</label>
+    <input type="date" class="form-control" formControlName="dob" id="dob" 
+    max="2002-06-31"
+    [ngClass]="{'is-invalid': !getControl('dob')?.valid && getControl('dob')?.touched }"
+    />
+    <div *ngIf="getControl('dob')?.errors && getControl('dob')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('dob')?.errors?.['required']">DOB is required</div>
+      <div *ngIf="getControl('dob')?.errors?.['dateMaxYear']">Minimum age is 20</div>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="doj" class="form-label">Date of joining</label>
+    <input type="date" class="form-control" formControlName="doj" id="doj" 
+    [ngClass]="{'is-invalid': !getControl('doj')?.valid && getControl('doj')?.touched }"
+    />
+    <div *ngIf="getControl('doj')?.errors && getControl('doj')?.touched"  class="form-text text-danger">
+      <div *ngIf="getControl('doj')?.errors?.['required']">DOJ is required</div>
+      <div *ngIf="getControl('doj')?.errors?.['dateMaxYear']">Minimum experience is 2</div>
+    </div>
+  </div>
+  <button type="submit" [disabled]="!employeeForm.valid" class="btn btn-primary">Submit</button>
+</form>

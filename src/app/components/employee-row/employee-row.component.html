@@ -1,0 +1,36 @@
+<table class="table">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">DOB</th>
+      <th scope="col">DOJ</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+<tr *ngFor="let employee of employees" appGreenBackground class="table-row">
+  <td scope="col">{{ employee.firstname }}</td>
+  <td scope="col">{{ employee.lastname }}</td>
+  <td scope="col">{{ employee.email }}</td>
+  <td scope="col">{{ employee.phone }}</td>
+  <td scope="col">{{ employee.dob | date : "yyyy-MM-dd" }}</td>
+  <td scope="col">{{ employee.doj | date : "yyyy-MM-dd" }}</td>
+  <td scope="col" class="edit">
+    <fa-icon
+      (click)="onEdit(employee)"
+      [ngStyle]="{ color: 'blue' }"
+      [icon]="faPen"
+    ></fa-icon>
+    <fa-icon
+      (click)="onDelete(employee)"
+      [ngStyle]="{ color: 'red' }"
+      [icon]="faTrash"
+      class="ml-10"
+    ></fa-icon>
+  </td>
+</tr>
+  </tbody>
+</table>

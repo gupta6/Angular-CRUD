@@ -1,0 +1,31 @@
+{
+  "employees": [
+    {
+      "firstname": "Kunal",
+      "lastname": "Gupta",
+      "email": "k@gmail.com",
+      "phone": "+91-9999999999",
+      "dob": "1995-02-08",
+      "doj": "2018-12-20",
+      "id": 1
+    },
+    {
+      "firstname": "Karan",
+      "lastname": "Kohli",
+      "email": "k11@gmail.com",
+      "phone": "9999999220",
+      "dob": "1998-12-05",
+      "doj": "2021-10-25",
+      "id": 2
+    },
+    {
+      "firstname": "Ron",
+      "lastname": "Wisley",
+      "email": "ron@gmail.com",
+      "phone": "+91-9911223344",
+      "dob": "1996-01-01",
+      "doj": "2018-07-12",
+      "id": 4
+    }
+  ]
+}
